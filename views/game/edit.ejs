@@ -1,0 +1,13 @@
+<div class="data-form">
+    <form class="form-signin" action="<%=`/game/${game._id}/update?_method=PUT`%>" method="POST">
+      <h2 class="form-signin-heading">Edit game:</h2>
+      <label for="inputTitle">Title</label>
+      <input type="text" name="title" id="inputTitle" class="form-control" value="<%= game.title %>" placeholder="Title" autofocus>
+      <label for="inputDescription">Description</label>
+      <input type="text" name="description" id="inputDescription" class="form-control" value="<%= game.description %>" placeholder="Description">
+      <label for="inputGameprice">Gameprice</label>
+      <input type="text" name="gameprice" id="inputGameprice" pattern="\d*" class="form-control" value="<%= game.gameprice %>" placeholder="Gameprice" required>
+      <br /><button class="btn btn-lg btn-primary btn-block" type="submit">Save</button>
+    </form>
+  </div>
+  

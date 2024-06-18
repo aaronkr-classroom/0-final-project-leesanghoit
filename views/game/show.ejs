@@ -1,0 +1,38 @@
+<h1 class="center">game Data for
+    <%= game.title %>
+  </h1>
+  
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <td>
+        <%= game.title %>
+      </td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td>
+        <%= game.description%>
+      </td>
+    </tr>
+    <tr>
+      <th>Game Price</th>
+      <td>
+        <%= game.gameprice%>
+      </td>
+    </tr>
+  </table>
+  
+  
+  <div>
+    <a class="button" href="<%=`/game/${game._id}/edit`%>">
+      Edit Game Details
+    </a>
+  </div>
+  <div>
+    <a class="button" href="<%= `/game/${game._id}/delete?_method=DELETE` %>" onclick="return confirm('Are you sure you want to delete this record?')" a>Delete</a>
+  </div>
+  <div>
+    <a class="button" href="/game">View all courses</a>
+  </div>
+  

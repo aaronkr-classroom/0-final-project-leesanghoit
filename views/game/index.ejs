@@ -1,0 +1,56 @@
+<!-- views/courses/index.ejs -->
+
+<main class="">
+    <div class="container col-xl-10 col-xxl-8 px-4 py-5">
+      <div class="pt-5 pb-5">
+        <h1>Game</h1>
+        <p>Here are all our current game offerings.</p>
+  
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Title</th>
+              <th>Description</th>
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% game.forEach(game => { %>
+            <tr>
+              <td>
+                <a href="<%= `/game/$game._id}` %>">
+                  <%=game.title %>
+                </a>
+              </td>
+              <td><%=game.description %></td>
+              <td>
+                <a href="<%=`game/$game._id}/edit`%>"> Edit </a>
+              </td>
+              <td>
+                <a
+                  href="<%= `game/$game._id}/delete?_method=DELETE` %>"
+                  onclick="return confirm('Are you sure you want to delete this record?')"
+                  a
+                  >Delete</a
+                >
+              </td>
+            </tr>
+            <% }); %>
+          </tbody>
+        </table>
+  
+        <div class="mt-5 text-center">
+          <a href="/game/new" class="btn btn-primary">Add New Game</a>
+          <a
+            href="/"
+            class="btn ut-red disabled"
+            role="button"
+            aria-disabled="true"
+            >Delete All Game</a
+          >
+        </div>
+      </div>
+    </div>
+  </main>
+  
